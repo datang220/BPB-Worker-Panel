@@ -84,6 +84,25 @@ cd scripts
 node youtube_insights.js --keyword "旅行 vlog" --region TW --language zh-TW
 ```
 
+#### 使用指南（中文）
+
+1. **安装 Node.js**：脚本基于原生 Node.js API 开发，推荐使用 Node.js 18 或更新版本。
+2. **进入脚本目录**：在仓库根目录执行 `cd scripts`。
+3. **运行脚本**：执行 `node youtube_insights.js --keyword "你的關鍵詞"` 即可开始分析。
+4. **可选参数**：
+   - `--region`：设置结果的区域代码，例如 `TW`（台湾）、`US`（美国）。
+   - `--language`：设置界面语言代码，例如 `zh-TW`（繁体中文）、`en`（英文）。
+   - `--results`：指定要分析的热门视频数量，默认 `5`。
+   - `--trending`：指定要抓取的趋势视频数量，默认 `10`。
+   - `--hot-keywords`：指定要返回的热门关键词数量，默认 `20`。
+5. **查看结果**：脚本会输出一份 JSON 报告，其中包含：
+   - `suggestions`：YouTube 提示的相关关键词。
+   - `topVideos`：搜索结果中热门视频的标题、频道、观看数、标签等信息。
+   - `bestVideo`：根据观看数挑选出的表现最佳视频。
+   - `trending.hotKeywords`：趋势视频中出现频率最高的关键词。
+
+> 示例输出会直接打印在终端中，可使用 `> output.json` 将结果保存为文件以便进一步分析。
+
 #### Supported options
 
 | Flag | Description |
