@@ -70,3 +70,29 @@ This project is dedicated to developing a user panel for the [Cloudflare-workers
 ---
 
 For a detailed tutorial on the core script, please refer to [Yongge’s blog and video tutorials](https://ygkkk.blogspot.com/2023/07/cfworkers-vless.html).
+
+---
+
+## Utility Scripts
+
+### YouTube Keyword Insights
+
+The repository now includes a helper script for researching YouTube content ideas. It can collect keyword suggestions, high-performing video titles, channel tags, and trending topics without requiring the official YouTube Data API.
+
+```bash
+cd scripts
+node youtube_insights.js --keyword "旅行 vlog" --region TW --language zh-TW
+```
+
+#### Supported options
+
+| Flag | Description |
+| ---- | ----------- |
+| `-k`, `--keyword` | Keyword or phrase to analyze (required). |
+| `--region` | Two-letter region code used to localize results. |
+| `--language` | Interface language code for localized responses. |
+| `--results` | Number of top videos to inspect (default: 5). |
+| `--trending` | Number of trending videos to fetch (default: 10). |
+| `--hot-keywords` | Number of aggregated hot keywords to return (default: 20). |
+
+The script prints a JSON report summarizing keyword suggestions, related searches, detailed video metadata (including tags), and popular trending keywords for rapid research.
