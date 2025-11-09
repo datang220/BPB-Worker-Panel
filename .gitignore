@@ -9,3 +9,8 @@
 !docs/**
 !.github/
 !.github/**
+!requirements.txt
+!train.py
+!shap_analysis.py
+!src/
+!src/**
