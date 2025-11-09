@@ -70,3 +70,27 @@ This project is dedicated to developing a user panel for the [Cloudflare-workers
 ---
 
 For a detailed tutorial on the core script, please refer to [Yongge’s blog and video tutorials](https://ygkkk.blogspot.com/2023/07/cfworkers-vless.html).
+
+---
+
+## Short Video Popularity Research Toolkit
+
+This repository now also includes a modular Python toolkit for studying the
+public signals that correlate with short-video popularity. All sample data must
+be collected legally, respect source platforms' robots.txt guidance, honor rate
+limits, and comply with each platform's Terms of Service. Personally
+identifiable information must be removed or anonymized before use.
+
+### Quick start
+
+```bash
+pip install -r requirements.txt
+python train.py --input public_videos.csv --target views_hot
+python shap_analysis.py --model artifacts/model.joblib --data public_videos.csv
+```
+
+The training script handles preprocessing, feature engineering (text TF-IDF,
+upload schedule one-hot encodings, author activity metrics, and interaction
+rates), model fitting (LightGBM or Random Forest), offline evaluation (AUC,
+NDCG, Precision@K, and playback curve export), and artifact persistence. The
+SHAP script highlights the ten most influential features learned by the model.
